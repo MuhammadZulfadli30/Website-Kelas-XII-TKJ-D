@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XII TKJ D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/f8b5a7db86.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 2v20M2 12h20M6 6l12 12M6 18L18 6"/>
+                    <circle cx="12" cy="12" r="2"/>
+                    <circle cx="12" cy="2" r="1.5"/>
+                    <circle cx="12" cy="22" r="1.5"/>
+                    <circle cx="2" cy="12" r="1.5"/>
+                    <circle cx="22" cy="12" r="1.5"/>
+                    <circle cx="6" cy="6" r="1.5"/>
+                    <circle cx="18" cy="18" r="1.5"/>
+                    <circle cx="6" cy="18" r="1.5"/>
+                    <circle cx="18" cy="6" r="1.5"/>
+                </svg>
+                GROUP 5
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-bg"></div>
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>XII TKJ D</h1>
+            <p>Collection of Memorable Photos</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-container">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="family">Formalitas</button>
+            <button class="filter-btn" data-filter="food">Dramatisasi</button>
+            <button class="filter-btn" data-filter="landscapes">Abstrak</button>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-container" id="gallery">
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Landscapes -->
+            <div class="gallery-item tall" data-category="landscapes">
+                <img src="1a.jpeg" alt="Mountain Snow">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Jumbo</h3>
+                    <p class="gallery-category">UKURAN AGUNG</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="food">
+                <img src="1d.jpeg" alt="Winter Warmth">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Middle of Chapter</h3>
+                    <p class="gallery-category">DRAMA PALING DRAMATIS</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="landscapes">
+                <img src="2a.jpeg" alt="Frozen Lake">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Mana Matamu</h3>
+                    <p class="gallery-category">LUPUT MELIHAT</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="family">
+                <img src="1f.jpeg" alt="Family Joy">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Foto Perpisahan</h3>
+                    <p class="gallery-category">Bab Akhir</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="family">
+                <img src="2f.jpeg" alt="Family Joy">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Berawal XI to XII</h3>
+                    <p class="gallery-category">Bab Awal</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="food">
+                <img src="2d.jpeg" alt="Festive Treats">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Foto Sakral</h3>
+                    <p class="gallery-category">LONJONG DIRAYAKAN</p>
+                </div>
+            </div>
+
+            <div class="gallery-item tall" data-category="landscapes">
+                <img src="3a.jpeg" alt="Winter Forest">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Sini Luu....</h3>
+                    <p class="gallery-category">PEMUKUL</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="family">
+                <img src="3f.jpeg" alt="Winter Together">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Kunjungan Industri</h3>
+                    <p class="gallery-category">Edukatif</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="family">
+                <img src="2h.jpg" alt="Winter Together">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Hari Guru</h3>
+                    <p class="gallery-category">PAHLAWAN ILMU</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="family">
+                <img src="4h.jpeg" alt="Winter Together">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Maulid</h3>
+                    <p class="gallery-category">CINTA RASUL</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="family">
+                <img src="5h.jpeg" alt="Winter Together">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Bukber</h3>
+                    <p class="gallery-category">Kebersamaan Ramadan</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="landscapes">
+                <img src="4a.jpeg" alt="Snowy Path">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Ada Penampakan Di Pintu</h3>
+                    <p class="gallery-category">KISS ME</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="landscapes">
+                <img src="5a.jpeg" alt="Snowy Path">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Lagi Bahagia-Bahagianya</h3>
+                    <p class="gallery-category">BEFORE DI GHOSTING</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="landscapes">
+                <img src="6a.jpeg" alt="Snowy Path">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">POV: Lagi Badmood Digangguin</h3>
+                    <p class="gallery-category">SINI BANGET BANG</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="landscapes">
+                <img src="7a.jpeg" alt="Snowy Path">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Kewing</h3>
+                    <p class="gallery-category">TAK BERWUJUD</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="landscapes">
+                <img src="8a.jpeg" alt="Snowy Path">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Master Debian</h3>
+                    <p class="gallery-category">OH MY GOD</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="landscapes">
+                    <img src="9a.jpeg" alt="Snowy Path">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Siapa Dia?</h3>
+                        <p class="gallery-category">MISTERIUS</p>
+                    </div>   
+            </div>
+
+            <div class="gallery-item" data-category="landscapes">
+                <img src="10a.jpeg" alt="Snowy Path">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">P Nyari Lawan!</h3>
+                    <p class="gallery-category">INFO</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="landscapes">
+                <img src="11a.jpeg" alt="Snowy Path">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Jamkos</h3>
+                    <p class="gallery-category">DIFOTOIN PAK ANGGA</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="landscapes">
+                <img src="1h.jpg" alt="Snowy Path">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Walas Tersayang</h3>
+                    <p class="gallery-category">EH ADA SIAPA TUH....</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="landscapes">
+                <img src="3h.jpeg" alt="Snowy Path">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Maulid</h3>
+                    <p class="gallery-category">GAYA BEBAS</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="food">
+                <img src="3d.JPG" alt="Cozy Drinks">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Ngantuk Persiapan Drama</h3>
+                    <p class="gallery-category">Sleep Well</p>
+                </div>
+            </div>
+
+             <div class="gallery-item" data-category="food">
+                <img src="4d.JPG" alt="Cozy Drinks">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">2 China 1 Jawa</h3>
+                    <p class="gallery-category">TRIO GENTS</p>
+                </div>
+            </div>
+
+             <div class="gallery-item" data-category="food">
+                <img src="5d.JPG" alt="Cozy Drinks">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Si Kecil Sudah Besar</h3>
+                    <p class="gallery-category">MENJELMA</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="food">
+                <img src="6d.JPG" alt="Cozy Drinks">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Lagi Liatin Apasi....</h3>
+                    <p class="gallery-category">UNEXPECTED</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="landscapes">
+                <img src="6h.jpeg" alt="Cozy Drinks">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Akmal Atit..</h3>
+                    <p class="gallery-category">KURANG ASUPAN LIQUID</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="landscapes">
+                <img src="7h.jpeg" alt="Cozy Drinks">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Ngaca dulu...</h3>
+                    <p class="gallery-category">SUPREMACY</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="landscapes">
+                <img src="8h.jpeg" alt="Cozy Drinks">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Holiday</h3>
+                    <p class="gallery-category">WAKTU REHAT</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="food">
+                <img src="7d.JPG" alt="Cozy Drinks">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Adalah Pokoknya</h3>
+                    <p class="gallery-category">Si Endut Lelah</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="food">
+                <img src="8d.JPG" alt="Cozy Drinks">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Sutradara Sword</h3>
+                    <p class="gallery-category">PENAKLUK PEREMPUAN</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="food">
+                <img src="9d.jpeg" alt="Cozy Drinks">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Gangster</h3>
+                    <p class="gallery-category">Underground</p>
+                </div>
+            </div>
+            
+            
+
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="closeLightbox">×</button>
+        <button class="lightbox-nav lightbox-prev" id="prevImage">‹</button>
+        <button class="lightbox-nav lightbox-next" id="nextImage">›</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImage">
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxCategory"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <h2>About</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Kami adalah kelas XII TKJD, yang tumbuh bersama sejak masa XI TKJD. Di ruang yang sama, kami belajar, tertawa, jatuh, lalu bangkit kembali. Setiap hari menjadi jejak, setiap kebersamaan menjelma kenangan—membentuk kami bukan hanya sebagai siswa, tetapi sebagai satu cerita utuh.</p>
+                <p>Kini, waktu membawa kami pada perpisahan. Bukan untuk melupakan, melainkan menyimpan semua yang pernah ada. Meski langkah akan berjalan ke arah berbeda, kisah ini akan tetap hidup—sebagai pengingat bahwa kami pernah berjalan bersama, dalam satu kelas, satu cerita.</p>
+                <p>Perpisahan ini bukan akhir, melainkan awal dari perjalanan baru. Apa yang telah kami lalui di kelas ini akan selalu menjadi bekal—tentang kebersamaan, keteguhan, dan mimpi yang pernah dirajut bersama. Di mana pun langkah kami berlabuh nanti, nama kelas ini akan tetap tinggal, sebagai rumah yang pernah kami sebut tempat pulang.</p>
+            </div>
+            <div>
+                <div class="about-image">
+                    <img src="1B.jpeg" alt="Photographer">
+                </div>
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Years Together</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Memories</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2>Contact Us</h2>
+        <p>Let's give us a message</p>
+        
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>📧</span>
+                <a href="mailto:hello@winterportfolio.com">muhammadzulfadli415@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <span class="btn btn-danger btn-lg px-4">
+              <i class="fas fa-user-plus me-2"></i> <a href="https://www.instagram.com/tekaje_de/">Follow us</a>
+            </span>
+            </div>
+            <div class="contact-item">
+                <span>📍</span>
+                <a href="https://www.google.com/maps/place/SMK+3+Perguruan+Cikini/@-6.3530666,106.8122245,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69ee9d01d67aed:0x1e934f07fff2427f!8m2!3d-6.3530719!4d106.8147994!16s%2Fg%2F1tj54xbh?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" target="_blank">SMK 3 Perguruan Cikini</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 XII TKJ D • Designed by <a rel="nofollow" href="https://www.tooplate.com" target="_blank">GROUP 5</a></p>
+    </footer>
+<script src="tooplate-winter-scripts.js"></script>
+</body>
+</html>
