@@ -1,12 +1,3 @@
-/* JavaScript Document
-
-Tooplate 2151 Winter Gallery
-
-https://www.tooplate.com/view/2151-winter-gallery
-
-*/
-
-// Mobile Menu Toggle
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const navLinks = document.getElementById('navLinks');
 
@@ -204,3 +195,4 @@ contactForm.addEventListener('submit', (e) => {
    // Reset form
    contactForm.reset();
 });
+

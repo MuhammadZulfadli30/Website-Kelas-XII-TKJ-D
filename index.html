@@ -362,7 +362,12 @@
         <h2>Contact Us</h2>
         <p>Let's give us a message</p>
         
-        <form class="contact-form">
+        <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+            <strong>Terimakasih!</strong> Pesan anda sudah kami terima.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <form class="contact-form" name="form-xii-tkjd">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -373,9 +378,14 @@
             </div>
             <div class="form-group">
                 <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
+                <textarea id="message" name="pesan" required></textarea>
             </div>
-            <button type="submit" class="submit-btn">Send Message</button>
+            <button type="submit" class="submit-btn btn-kirim">Send Message</button>
+
+            <button class="btn btn-danger w-100 btn-loading d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                <span role="status">Loading...</span>
+              </button>
         </form>
 
         <div class="contact-info">
@@ -399,6 +409,34 @@
     <footer>
         <p>© 2026 XII TKJ D • Designed by <a rel="nofollow" href="https://www.tooplate.com" target="_blank">GROUP 5</a></p>
     </footer>
-<script src="tooplate-winter-scripts.js"></script>
+<script src="tooplate-winter-scripts.js">
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwRsx3JVC45J7tlgoqYb4bmdEub1pLBIkfgBYKqLVE4aFxy0Kb8GuwDUxX8gMHqBABF/exec';
+	const form = document.forms['form-xii-tkjd'];
+	const btnKirim = document.querySelector('.btn-kirim');
+	const btnLoading = document.querySelector('.btn-loading');
+    const myAlert = document.querySelector('.my-alert');
+
+	form.addEventListener('submit', e => {
+    e.preventDefault();
+    // ketika tombol submit diklik
+    // tampilkan tombol loading, hilangkan tombol kirim
+    btnLoading.classList.toggle('d-none');
+    btnKirim.classList.toggle('d-none');
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        // tampilkan tombol kirim, hilangkan tombol loading
+        btnLoading.classList.toggle('d-none');   
+        btnKirim.classList.toggle('d-none');
+        // tampilkan alert
+        myAlert.classList.toggle('d-none');
+        // reset form
+        form.reset();
+        console.log('Success!', response)
+      })
+      .catch(error => console.error('Error!', error.message));
+  });
+</script>
+
+
 </body>
 </html>
