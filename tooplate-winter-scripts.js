@@ -196,3 +196,84 @@ contactForm.addEventListener('submit', (e) => {
    contactForm.reset();
 });
 
+const canvas = document.getElementById('bubbleCanvas');
+const ctx = canvas.getContext('2d');
+let bubbles = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+// Membuat bubble dengan properti acak
+function createBubble() {
+  const x = Math.random() * canvas.width;
+  const y = canvas.height + Math.random() * 100;
+  const radius = Math.random() * 20 + 10;
+  const speed = Math.random() * 1 + 0.5;
+  const opacity = Math.random() * 0.5 + 0.3;
+  const hue = 20 + Math.random() * 30; // antara orange ke merah
+  bubbles.push({ x, y, radius, speed, opacity, hue });
+}
+
+// Loop animasi bubble
+function animateBubbles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Tambahkan bubble baru secara acak
+  if (Math.random() < 0.1 && bubbles.length < 100) createBubble();
+
+  // Update dan gambar setiap bubble
+  for (let i = 0; i < bubbles.length; i++) {
+    const b = bubbles[i];
+    b.y -= b.speed;
+    b.x += Math.sin(b.y / 20) * 0.5; // sedikit goyangan horizontal
+
+    ctx.beginPath();
+    const gradient = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.radius);
+    gradient.addColorStop(0, `hsla(${b.hue}, 100%, 60%, ${b.opacity})`);
+    gradient.addColorStop(1, `hsla(${b.hue}, 100%, 60%, 0)`);
+    ctx.fillStyle = gradient;
+    ctx.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Hapus bubble yang sudah keluar dari layar
+    if (b.y + b.radius < 0) {
+      bubbles.splice(i, 1);
+      i--;
+    }
+  }
+
+  requestAnimationFrame(animateBubbles);
+}
+
+// Jalankan animasi
+animateBubbles();
+
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbx_tmLLb47D2LMO77P2C8DtPvnhaPPCPoJimmk5oZCRD8QBl7vH7-dCkNt2yiuqZYGc/exec';
+  const form = document.forms['message-for-zul'];
+  const btnKirim = document.querySelector('.btn-kirim');
+  const btnLoading = document.querySelector('.btn-loading');
+  const myAlert = document.querySelector('.my-alert');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    // ketika tombol submit diklik
+    // tampilkan tombol loading, hilangkan tombol kirim
+    btnLoading.classList.toggle('d-none');
+    btnKirim.classList.toggle('d-none');
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        // tampilkan tombol kirim, hilangkan tombol loading
+        btnLoading.classList.toggle('d-none');   
+        btnKirim.classList.toggle('d-none');
+        // tampilkan alert
+        myAlert.classList.toggle('d-none');
+        // reset form
+        form.reset();
+        console.log('Success!', response)
+      })
+      .catch(error => console.error('Error!', error.message));
+  });
