@@ -702,7 +702,7 @@ footer a:hover {
 
 .form-group textarea {
 	min-height: 150px;
-	resize: vertical;
+	resize: none;
 }
 
 .submit-btn {
@@ -762,7 +762,87 @@ footer a:hover {
 	cursor: pointer;
 }
 
-/* Responsive */
+/* ---------- Toast Modal (kiri-bawah, profesional) ---------- */
+
+/* toast container */
+#formModal {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  width: min(420px, calc(100% - 40px));
+  max-width: 420px;
+  pointer-events: none; /* allow interactions through except inner */
+  opacity: 0;
+  transform: translateY(12px) scale(.99);
+  transition: opacity 240ms ease, transform 240ms ease;
+  will-change: transform, opacity;
+}
+
+/* inner visible card */
+#formModal .modal-inner {
+  pointer-events: auto;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.90), rgba(250,250,250,0.86));
+  border-radius: 0;
+  padding: 12px 14px;
+  box-shadow: 0 12px 40px rgba(20,30,40,0.16);
+  backdrop-filter: blur(6px) saturate(120%);
+  border: 1px solid rgba(123,168,189,0.08);
+}
+
+/* show/hide states */
+#formModal.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+#formModal.hide {
+  opacity: 0;
+  transform: translateY(12px) scale(.98);
+}
+
+.modal-icon {
+  min-width: 44px;
+  min-height: 44px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(123,168,189,0.10), rgba(123,168,189,0.05));
+  border-radius: 10px;
+  color: var(--color-slate);
+  box-shadow: 0 6px 18px rgba(80,110,130,0.06);
+}
+
+.modal-content h4 {
+  margin: 0 0 2px 0;
+  font-size: 0.98rem;
+  color: var(--color-slate);
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+.modal-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-charcoal);
+  opacity: 0.85;
+}
+
+/* small hidden buttons area (kept for fallback) */
+.modal-buttons { display: none !important; }
+
+/* responsive tweaks */
+@media (max-width: 480px) {
+  #formModal { left: 12px; bottom: 12px; width: calc(100% - 24px); max-width: unset; }
+  .modal-icon { min-width: 40px; min-height: 40px; font-size: 18px; }
+  .modal-content h4 { font-size: 0.95rem; }
+  .modal-content p { font-size: 0.85rem; }
+}
+
+/* Responsive (existing) */
 @media (max-width: 768px) {
 	.hero {
 		padding: 8rem 2rem 6rem;
